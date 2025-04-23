@@ -1,0 +1,289 @@
+[
+  {
+    "id": 1,
+    "question": "How can I make an appointment with my academic advisor?",
+    "answer": "Use the HuskyCT Advising portal (Tools \u2192 Appointments) or email the CSE Undergraduate Advising Office at cse_ugrad_advising@engr.uconn.edu to schedule an appointment."
+  },
+  {
+    "id": 2,
+    "question": "How can I find out who my assigned academic advisor is?",
+    "answer": "Log in to Student Admin, go to Student Records \u2192 My Advising Report, and you\u2019ll see your assigned faculty advisor listed there."
+  },
+  {
+    "id": 3,
+    "question": "What is the Preliminary Plan of Study (POS) and when is it due?",
+    "answer": "The Preliminary POS is an outline of your intended coursework for Years\u00a01\u20132. It must be submitted via Student Admin by the end of your sophomore year."
+  },
+  {
+    "id": 4,
+    "question": "How do I build and submit my Preliminary Plan of Study?",
+    "answer": "In Student Admin, open the Plan of Study tool, select your courses for Years\u00a01\u20132, then submit it for advisor review and approval."
+  },
+  {
+    "id": 5,
+    "question": "What if my Preliminary Plan of Study is denied or I need to change it?",
+    "answer": "Revise it according to your advisor\u2019s feedback and resubmit in Student Admin. If you need later changes, work with your advisor to update the POS before the final deadline."
+  },
+  {
+    "id": 6,
+    "question": "What is the Final Plan of Study and when should I submit it?",
+    "answer": "The Final POS is your official degree audit submitted before graduation (usually by the end of junior year) via Student Admin\u2019s Plan of Study tool."
+  },
+  {
+    "id": 7,
+    "question": "What important dates should I know on the academic calendar?",
+    "answer": "Check the University Registrar\u2019s Academic Calendar at registrar.uconn.edu for key dates: enrollment windows, add/drop deadlines, withdrawal deadlines, and finals week."
+  },
+  {
+    "id": 8,
+    "question": "How do I find my enrollment appointment and register for classes?",
+    "answer": "In Student Admin, look under Enrollment Dates for your appointment time. Then use Student Admin \u2192 Registration to add/drop courses when your window opens."
+  },
+  {
+    "id": 9,
+    "question": "What should I do if a class I need is full?",
+    "answer": "Join the waitlist via Student Admin. You can also email the course instructor or department office to request a permission number."
+  },
+  {
+    "id": 10,
+    "question": "How do I get a permission number for a course?",
+    "answer": "Contact the instructor or the CSE department office; they\u2019ll issue you a permission number that you can enter in Student Admin to enroll."
+  },
+  {
+    "id": 11,
+    "question": "Can I use a permission number to override a course prerequisite?",
+    "answer": "Typically no\u2014permission numbers only override enrollment capacity. To waive a prerequisite, you must get written approval from the department chair and submit a petition."
+  },
+  {
+    "id": 12,
+    "question": "How can I check if I meet the prerequisites for a course?",
+    "answer": "Open the course listing in Student Admin or HuskyCT and view the Details tab to see official prerequisite requirements."
+  },
+  {
+    "id": 13,
+    "question": "Do I need to take the Math Placement Exam or other placement tests?",
+    "answer": "You must pass the Math Placement Exam (MPE) unless you have AP or transfer credit for calculus. Check the Math Department website for the current policy."
+  },
+  {
+    "id": 14,
+    "question": "How do I drop a class or withdraw from a course, and what are the deadlines?",
+    "answer": "Use Student Admin \u2192 Registration to drop before the add/drop deadline. After that, you can withdraw with a W up to the withdrawal deadline listed on the Academic Calendar."
+  },
+  {
+    "id": 15,
+    "question": "How do I drop a summer class?",
+    "answer": "Log into the Summer Session registration portal and drop before the summer add/drop deadline; check the Summer Session website for exact dates."
+  },
+  {
+    "id": 16,
+    "question": "How many credits do I need to graduate with a B.S. in Computer Science & Engineering?",
+    "answer": "You need a minimum of 120 total credits: at least 51 credits of CSE core, 15 credits of CSE technical electives, plus math, science, and general education requirements."
+  },
+  {
+    "id": 17,
+    "question": "What are the required courses and electives for the CSE major?",
+    "answer": "Core courses include CSE\u00a01141,\u00a02110,\u00a02210,\u00a02600,\u00a03100,\u00a03110,\u00a03300,\u00a03500, and the CSE\u00a04000 capstone sequence. You also choose at least 15 credits of 3000\u2011level+ CSE electives."
+  },
+  {
+    "id": 18,
+    "question": "What math and science courses are required for CSE majors?",
+    "answer": "You must take MATH\u00a01131Q,\u00a01132Q,\u00a02110,\u00a02410; PHYS\u00a01201Q,\u00a01202Q; and CHEM\u00a01125Q (unless you have AP or transfer credit)."
+  },
+  {
+    "id": 19,
+    "question": "Do CSE majors need to take a chemistry course or can it be skipped with AP credit?",
+    "answer": "CHEM\u00a01125Q is required but can be waived if you earned equivalent AP or transfer credit recognized by UConn."
+  },
+  {
+    "id": 20,
+    "question": "What counts as a technical elective in the CSE program?",
+    "answer": "Any 3000\u2011level or above CSE course not listed as a core requirement. Cross\u2011listed courses require departmental approval."
+  },
+  {
+    "id": 21,
+    "question": "What is the senior design project in CSE and when do I take it?",
+    "answer": "The senior design capstone is CSE\u00a04000 &\u00a04001, taken in your senior year to complete a team\u2011based engineering project."
+  },
+  {
+    "id": 22,
+    "question": "Are there any concentrations or tracks within the CSE major?",
+    "answer": "UConn\u2019s CSE major does not have formal tracks. You can tailor your elective choices to emphasize software, hardware, or other areas."
+  },
+  {
+    "id": 23,
+    "question": "How can I declare a minor?",
+    "answer": "Submit a Minor Declaration Form available on the Registrar\u2019s site, get your advisor\u2019s signature, and send it to the Registrar\u2019s Office."
+  },
+  {
+    "id": 24,
+    "question": "How can I declare a double major?",
+    "answer": "Complete the Change of Major form in Student Admin or at the Registrar\u2019s Office and meet the GPA and course requirements for both majors."
+  },
+  {
+    "id": 25,
+    "question": "What is the difference between a double major and a dual degree?",
+    "answer": "A double major earns one diploma listing two fields of study; a dual degree awards two separate diplomas and usually requires additional credits."
+  },
+  {
+    "id": 26,
+    "question": "How do I change my major to CSE or another engineering major?",
+    "answer": "Fill out the Change of Major form in Student Admin, ensure you meet any GPA or prerequisite criteria, and get department approval."
+  },
+  {
+    "id": 27,
+    "question": "What are the requirements to switch into the CSE major?",
+    "answer": "You typically need a minimum GPA (e.g. 2.8), successful completion of key courses like CSE\u00a01141, and approval from the CSE department."
+  },
+  {
+    "id": 28,
+    "question": "What is the difference between the Computer Science & Engineering major and the Computer Science major at UConn?",
+    "answer": "CSE is ABET\u2011accredited and includes engineering fundamentals; CS is aimed at computational theory and software, administered by the College of Liberal Arts & Sciences."
+  },
+  {
+    "id": 29,
+    "question": "Can I complete the CSE degree at a regional campus, or do I have to transition to Storrs?",
+    "answer": "You may take lower\u2011division CSE courses at regional campuses, but upper\u2011division and capstone courses must be completed at Storrs."
+  },
+  {
+    "id": 30,
+    "question": "How do I request an additional degree or dual degree involving CSE?",
+    "answer": "Submit the Additional Degree Petition via Student Admin and satisfy all course requirements for the second degree."
+  },
+  {
+    "id": 31,
+    "question": "Where can I find academic forms I might need?",
+    "answer": "All forms (Add/Drop, Plan of Study, petitions) are available on the Registrar\u2019s website under \u201cForms & Publications.\u201d"
+  },
+  {
+    "id": 32,
+    "question": "What is the Pass/Fail policy for engineering students?",
+    "answer": "Engineering core courses must be taken for a letter grade. Electives may be taken Pass/Fail only with advisor approval\u2014see the policy at policy.uconn.edu."
+  },
+  {
+    "id": 33,
+    "question": "Can I repeat a CSE course to improve my grade?",
+    "answer": "You may repeat a course once. If you use repeat forgiveness, the new grade replaces the old one in your GPA, though both appear on your transcript."
+  },
+  {
+    "id": 34,
+    "question": "How does repeating a course affect my GPA and credits?",
+    "answer": "With repeat forgiveness, only the higher grade counts in your GPA and credits count once toward your degree."
+  },
+  {
+    "id": 35,
+    "question": "What happens if I want to take a course for the third time?",
+    "answer": "A third attempt requires written permission from the department chair and is granted only under exceptional circumstances."
+  },
+  {
+    "id": 36,
+    "question": "What do the temporary grades 'I', 'N', and 'X' mean on my transcript?",
+    "answer": "'I' is Incomplete (missing work), 'N' is No Basis (instructor did not submit), and 'X' is Audit (no credit)."
+  },
+  {
+    "id": 37,
+    "question": "What GPA do I need to remain in good standing and graduate from the CSE program?",
+    "answer": "You need at least a 2.0 cumulative GPA and a 2.0 GPA in your CSE courses to remain in good standing and graduate."
+  },
+  {
+    "id": 38,
+    "question": "How will my AP exam credits be applied to my degree?",
+    "answer": "AP credits are granted per the UConn AP credit policy (e.g. a score \u22654 in Calc AB grants MATH\u00a01131Q). Check the AP chart on registrar.uconn.edu."
+  },
+  {
+    "id": 39,
+    "question": "How do I transfer credits from another college or summer course to UConn?",
+    "answer": "Submit official transcripts to the Registrar; course equivalency is evaluated, and approved credits post to your UConn record."
+  },
+  {
+    "id": 40,
+    "question": "How do I request a course substitution for a transfer or study abroad class?",
+    "answer": "Complete a Course Substitution Petition with the syllabus, get your CSE advisor\u2019s signature, and submit it to the department office."
+  },
+  {
+    "id": 41,
+    "question": "What type of computer or software do I need for my CSE coursework?",
+    "answer": "A laptop with \u22658\u00a0GB RAM running Windows or Linux is recommended. Install VS\u00a0Code, Python, Java, Git, and any IDEs used in your courses."
+  },
+  {
+    "id": 42,
+    "question": "How can I learn about study abroad opportunities as a CSE major and still meet my degree requirements?",
+    "answer": "Meet with the Global Affairs office and your CSE advisor early to pre\u2011approve courses so they count toward your degree."
+  },
+  {
+    "id": 43,
+    "question": "How do I enroll in an independent study, internship for credit, or undergraduate research course?",
+    "answer": "Register for CSE\u00a04098/4099 with a faculty sponsor, complete the Independent Study Agreement form, and submit it to the CSE department."
+  },
+  {
+    "id": 44,
+    "question": "Hi",
+    "answer": "Hey there! How can I help you today?",
+    "category": "greeting"
+  },
+  {
+    "id": 45,
+    "question": "How are you?",
+    "answer": "I'm just a bot, but I'm ready to help!",
+    "category": "greeting"
+  },
+  {
+    "id": 46,
+    "question": "What are the dining hall hours at UConn?",
+    "answer": "Dining halls are open daily. Most serve breakfast 7\u201310:45am, lunch 11\u20132:15pm, dinner 4\u20137:15pm, and Late Night until 10pm at South/Northwest. Visit dining.uconn.edu for live hours.",
+    "category": "general"
+  },
+  {
+    "id": 47,
+    "question": "What are the prerequisites for CSE 2050?",
+    "answer": "To take CSE 2050, you need to complete CSE 1010 or CSE 1729.",
+    "category": "cse"
+  },
+  {
+    "question": "What are the prerequisites for CSE 1729?",
+    "answer": "CSE 1729 requires CSE 1010 as a prerequisite.",
+    "category": "cse",
+    "id": 48
+  },
+  {
+    "question": "What are the prerequisites for CSE 2050?",
+    "answer": "CSE 2050 requires either CSE 1010 or CSE 1729.",
+    "category": "cse",
+    "id": 49
+  },
+  {
+    "question": "What are the prerequisites for CSE 3100?",
+    "answer": "CSE 3100 requires CSE 2050 or CSE 2100. Restricted to School of Engineering students and CS minors.",
+    "category": "cse",
+    "id": 50
+  },
+  {
+    "question": "What are the prerequisites for CSE 3500?",
+    "answer": "CSE 3500 requires CSE 2050 or CSE 2100 and CSE 2500. Restricted to School of Engineering students, Cognitive Science majors, and CS minors.",
+    "category": "cse",
+    "id": 51
+  },
+  {
+    "question": "How do I access HuskyCT?",
+    "answer": "Go to huskyct.uconn.edu and sign in with your NetID and password. It\u2019s your course platform for class materials and assignments.",
+    "category": "general",
+    "id": 52
+  },
+  {
+    "question": "How can I ride the UConn bus system?",
+    "answer": "UConn\u2019s free shuttle system (HuskyGo) runs across campus. Use the Passio GO app to track live bus times and routes.",
+    "category": "general",
+    "id": 53
+  },
+  {
+    "question": "Hello",
+    "answer": "Hi there! Ask me anything about UConn academics or life.",
+    "category": "greeting",
+    "id": 54
+  },
+  {
+    "question": "Hey",
+    "answer": "Hey! How can I help you today?",
+    "category": "greeting",
+    "id": 55
+  }
+]

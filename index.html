@@ -1,0 +1,405 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>UConn CSE AI Assistant</title>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+  <style>
+    body, html {
+      height: 100%;
+      margin: 0;
+      font-family: 'Montserrat', sans-serif;
+      overflow: hidden;
+    }
+    
+    .bg-image {
+      background-image: url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZlcnNpb249IjEuMSIgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSI+PHJlY3Qgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgZmlsbD0iIzAwMWY0YiIvPjwvc3ZnPg==');
+      height: 100%;
+      background-position: center;
+      background-repeat: no-repeat;
+      background-size: cover;
+      position: relative;
+    }
+    
+    .campus-overlay {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-image: url('/api/placeholder/1600/900');
+      background-size: cover;
+      background-position: center;
+      opacity: 0.4;
+    }
+    
+    .content-container {
+      position: relative;
+      z-index: 10;
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+    
+    .logo-container {
+      margin: 2rem 0;
+      width: 380px;
+      max-width: 90%;
+    }
+    
+    
+    .chat-container {
+      width: 90%;
+      max-width: 700px;
+      background-color: rgba(255, 255, 255, 0.95);
+      border-radius: 1rem;
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+      backdrop-filter: blur(5px);
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      height: calc(100% - 180px);
+      margin-bottom: 2rem;
+    }
+    
+    .chat-header {
+      background: linear-gradient(135deg, #0a1e40 0%, #1a3a6c 100%);
+      color: white;
+      padding: 1rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    
+    .chat-messages {
+      flex-grow: 1;
+      overflow-y: auto;
+      padding: 1.5rem;
+      display: flex;
+      flex-direction: column;
+      gap: 1.5rem;
+    }
+    
+    .message {
+      display: flex;
+      gap: 1rem;
+      max-width: 90%;
+    }
+    
+    .message.user {
+      align-self: flex-end;
+      flex-direction: row-reverse;
+    }
+    
+    .avatar {
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      flex-shrink: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: white;
+    }
+    
+    .bot-avatar {
+      background: linear-gradient(135deg, #0a1e40 0%, #1a3a6c 100%);
+    }
+    
+    .user-avatar {
+      background: linear-gradient(135deg, #e4002b 0%, #c00024 100%);
+    }
+    
+    .message-bubble {
+      padding: 1rem;
+      border-radius: 1rem;
+      box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+      position: relative;
+    }
+    
+    .bot-bubble {
+      background-color: #f0f4ff;
+      border-left: 3px solid #0a1e40;
+      border-top-left-radius: 0;
+    }
+    
+    .user-bubble {
+      background-color: #fff0f0;
+      border-right: 3px solid #e4002b;
+      border-top-right-radius: 0;
+      text-align: right;
+    }
+    
+    .chat-input-container {
+      padding: 1rem;
+      border-top: 1px solid #eee;
+      background-color: white;
+    }
+    
+    .chat-input-form {
+      display: flex;
+      gap: 0.5rem;
+    }
+    
+    .chat-input {
+      flex-grow: 1;
+      padding: 0.75rem 1rem;
+      border: 2px solid #ddd;
+      border-radius: 2rem;
+      outline: none;
+      transition: all 0.2s ease;
+    }
+    
+    .chat-input:focus {
+      border-color: #0a1e40;
+    }
+    
+    .send-button {
+      background: linear-gradient(135deg, #0a1e40 0%, #1a3a6c 100%);
+      color: white;
+      border: none;
+      border-radius: 2rem;
+      padding: 0.75rem 1.5rem;
+      cursor: pointer;
+      transition: all 0.2s ease;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+    
+    .send-button:hover {
+      background: linear-gradient(135deg, #1a3a6c 0%, #0a1e40 100%);
+    }
+    
+    .pulse {
+      display: inline-block;
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      background: #e4002b;
+      margin-right: 5px;
+      animation: pulse 1.5s infinite;
+    }
+    
+    @keyframes pulse {
+      0% {
+        transform: scale(0.95);
+        box-shadow: 0 0 0 0 rgba(228, 0, 43, 0.7);
+      }
+      
+      70% {
+        transform: scale(1);
+        box-shadow: 0 0 0 8px rgba(228, 0, 43, 0);
+      }
+      
+      100% {
+        transform: scale(0.95);
+        box-shadow: 0 0 0 0 rgba(228, 0, 43, 0);
+      }
+    }
+    
+    ::-webkit-scrollbar {
+      width: 6px;
+    }
+    
+    ::-webkit-scrollbar-track {
+      background: #f1f1f1;
+    }
+    
+    ::-webkit-scrollbar-thumb {
+      background: #888;
+      border-radius: 3px;
+    }
+    
+    ::-webkit-scrollbar-thumb:hover {
+      background: #555;
+    }
+    
+    .typing-indicator {
+      display: flex;
+      align-items: center;
+    }
+    
+    .typing-dot {
+      width: 6px;
+      height: 6px;
+      background-color: #0a1e40;
+      border-radius: 50%;
+      margin: 0 2px;
+      animation: typing-dot 1.4s infinite ease-in-out;
+    }
+    
+    .typing-dot:nth-child(1) {
+      animation-delay: 0s;
+    }
+    
+    .typing-dot:nth-child(2) {
+      animation-delay: 0.2s;
+    }
+    
+    .typing-dot:nth-child(3) {
+      animation-delay: 0.4s;
+    }
+    
+    @keyframes typing-dot {
+      0%, 60%, 100% {
+        transform: translateY(0);
+      }
+      30% {
+        transform: translateY(-5px);
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="bg-image">
+    <div class="campus-overlay"></div>
+    <div class="content-container">
+      <div class="logo-container">
+        <svg class="uconn-logo" viewBox="0 0 800 200" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M0 0H220V150H0V0Z" fill="none"/>
+          <path d="M105 0H0V150H105C165 150 220 120 220 75C220 30 165 0 105 0ZM100 115H35V35H100C135 35 185 45 185 75C185 105 135 115 100 115Z" fill="white"/>
+          <path d="M345 0H260V150H345C405 150 460 120 460 75C460 30 405 0 345 0ZM340 115H295V35H340C375 35 425 45 425 75C425 105 375 115 340 115Z" fill="white"/>
+          <path d="M560 0H490V150H560C620 150 675 120 675 75C675 30 620 0 560 0ZM560 115H525V35H560C595 35 645 45 645 75C645 105 595 115 560 115Z" fill="white"/>
+          <path d="M700 0H735V115H775V150H700V0Z" fill="white"/>
+          <path d="M775 0H800V115V150H775V0Z" fill="white"/>
+          <path d="M0 160H800V200H0V160Z" fill="none"/>
+          <path d="M0 160H800V200H0V160Z" fill="none"/>
+          <text x="30" y="190" font-family="Montserrat" font-size="30" fill="white">UNIVERSITY OF CONNECTICUT</text>
+        </svg>
+      </div>
+      
+      <div class="chat-container">
+        <div class="chat-header">
+          <div class="flex items-center">
+            <div class="pulse"></div>
+            <h1 class="text-xl font-bold">CSE Department AI Assistant</h1>
+          </div>
+          <div>
+            <i class="fas fa-microchip text-xl"></i>
+          </div>
+        </div>
+        
+        <div id="chat-messages" class="chat-messages">
+          <!-- Bot welcome message -->
+          <div class="message">
+            <div class="avatar bot-avatar">
+              <i class="fas fa-robot"></i>
+            </div>
+            <div class="message-bubble bot-bubble">
+              <p>Welcome to the UConn CSE Department AI Assistant! I'm here to help answer your questions about Computer Science & Engineering at UConn. How can I assist you today?</p>
+            </div>
+          </div>
+        </div>
+        
+        <div class="chat-input-container">
+          <form id="chat-form" class="chat-input-form">
+            <input type="text" id="user-input" class="chat-input" placeholder="Type your question here..." autocomplete="off">
+            <button type="submit" class="send-button">
+              <span>Send</span>
+              <i class="fas fa-paper-plane"></i>
+            </button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    const form = document.getElementById('chat-form');
+    const input = document.getElementById('user-input');
+    const messages = document.getElementById('chat-messages');
+    
+    form.addEventListener('submit', function(e) {
+      e.preventDefault();
+      const userMessage = input.value.trim();
+      if (userMessage === '') return;
+      
+      // Add user message
+      addMessage(userMessage, true);
+      input.value = '';
+      
+      // Show typing indicator
+      addTypingIndicator();
+      
+      // Simulate bot response after delay
+      setTimeout(() => {
+        // Remove typing indicator
+        const typingIndicator = document.querySelector('.typing-indicator-container');
+        if (typingIndicator) {
+          typingIndicator.remove();
+        }
+        
+        // Get response from server
+        fetch('/ask', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ question: userMessage })
+        })
+        .then(r => r.json())
+        .then(({ answer }) => {
+          addMessage(answer, false);
+        })
+        .catch(_ => {
+          addMessage("I'm sorry, I couldn't process your request. Please try again.", false);
+        });
+      }, 1500);
+    });
+    
+    function addMessage(text, isUser) {
+      const messageDiv = document.createElement('div');
+      messageDiv.className = `message ${isUser ? 'user' : ''}`;
+      
+      const avatarDiv = document.createElement('div');
+      avatarDiv.className = `avatar ${isUser ? 'user-avatar' : 'bot-avatar'}`;
+      avatarDiv.innerHTML = `<i class="fas ${isUser ? 'fa-user' : 'fa-robot'}"></i>`;
+      
+      const bubbleDiv = document.createElement('div');
+      bubbleDiv.className = `message-bubble ${isUser ? 'user-bubble' : 'bot-bubble'}`;
+      bubbleDiv.innerHTML = `<p>${text}</p>`;
+      
+      messageDiv.appendChild(avatarDiv);
+      messageDiv.appendChild(bubbleDiv);
+      messages.appendChild(messageDiv);
+      
+      // Scroll to bottom
+      messages.scrollTop = messages.scrollHeight;
+    }
+    
+    function addTypingIndicator() {
+      const indicatorDiv = document.createElement('div');
+      indicatorDiv.className = 'message typing-indicator-container';
+      
+      const avatarDiv = document.createElement('div');
+      avatarDiv.className = 'avatar bot-avatar';
+      avatarDiv.innerHTML = '<i class="fas fa-robot"></i>';
+      
+      const bubbleDiv = document.createElement('div');
+      bubbleDiv.className = 'message-bubble bot-bubble';
+      bubbleDiv.innerHTML = `
+        <div class="typing-indicator">
+          <div class="typing-dot"></div>
+          <div class="typing-dot"></div>
+          <div class="typing-dot"></div>
+        </div>
+      `;
+      
+      indicatorDiv.appendChild(avatarDiv);
+      indicatorDiv.appendChild(bubbleDiv);
+      messages.appendChild(indicatorDiv);
+      
+      // Scroll to bottom
+      messages.scrollTop = messages.scrollHeight;
+    }
+    
+    // Focus input on load
+    window.addEventListener('load', () => {
+      input.focus();
+    });
+  </script>
+</body>
+</html>
